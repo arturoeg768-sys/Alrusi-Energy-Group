@@ -1,0 +1,392 @@
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  background: url('fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 150px;
+  /* Ajusta esto según la altura de tu header */
+
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 150px;
+  /* Ajusta si tu header es más alto o más bajo */
+}
+
+.trans-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 3rem;
+  background: linear-gradient(to right, rgba(180, 180, 180, 0.8), rgba(0, 0, 0, 0.3), rgba(160, 120, 50, 0.8));
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 130px;
+  width: auto;
+  margin-right: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.menu a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: #64e922;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.menu a:hover {
+  color: #ffd700;
+}
+
+/* BOTÓN CONTACTO */
+.btn-contacto {
+  padding: 0.5rem 1.2rem;
+  border: 2px solid #64e922;
+  border-radius: 30px;
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-contacto:hover {
+  background-color: #64e922;
+  color: #222;
+}
+
+
+
+
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #00a651;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+a {
+  color: #0071bc;
+  text-decoration: none;
+}
+
+.volver {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #00a651;
+  color: white;
+  border-radius: 5px;
+}
+
+.volver:hover {
+  background-color: #007a4c;
+}
+
+
+
+
+
+
+
+
+/***********/
+/*Responsive para móviles*/
+@media (max-width: 768px) {
+  .qs-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .qs-img img {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+.footer {
+  background: linear-gradient(to right, #274C77, #00a651);
+  color: white;
+  padding: 2rem 1rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.5rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #ffd700;
+}
+
+.social-icons a img {
+  width: 28px;
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.decor-img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.15; /* transparencia para que no distraigan */
+  z-index: -1; /* para que estén detrás del contenido */
+  max-width: 250px; /* tamaño máximo */
+}
+
+.decor-left {
+  left: 20px;
+}
+
+.decor-right {
+  right: 20px;
+}
+
+
+/* ===========================
+   RESPONSIVE SOLO MÓVIL
+   (no afecta escritorio)
+   =========================== */
+
+@media (max-width: 768px){
+
+  /* Evita “scroll lateral” y saltos por header sticky */
+  html, body{
+    overflow-x: hidden;
+    scroll-padding-top: 92px; /* espacio para el header */
+    background-attachment: scroll; /* mejora rendimiento en móvil */
+  }
+
+  /* Header más compacto */
+  .trans-header{
+    position: sticky; top: 0; z-index: 1000;
+    padding: 10px 14px !important;
+    gap: 10px;
+    flex-direction: column;         /* logo arriba, menú abajo */
+    align-items: stretch;
+  }
+  .logo{
+    height: 56px !important;
+    width: auto;
+  }
+
+  /* Menú: una fila desplazable si no cabe */
+  .menu{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;               /* scroll horizontal si se necesita */
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .menu::-webkit-scrollbar{ display:none; }
+  .menu a,
+  .btn-contacto{
+    font-size: .95rem;
+    padding: 8px 12px;
+    line-height: 1;
+    display: inline-block;
+  }
+
+  /* Contenedor del aviso */
+  .privacy-wrap{                   /* por si agregas estilos globales */
+    padding: 16px 0;
+  }
+
+  .container{
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 18px 14px;            /* menos padding lateral en móvil */
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0,0,0,.08);
+  }
+
+  h1{
+    font-size: clamp(22px, 6vw, 28px);
+    line-height: 1.2;
+    margin: 4px 0 14px;
+    text-align: center;
+  }
+
+  p{
+    font-size: 1rem;
+    line-height: 1.55;
+    margin: 0 0 12px 0;
+    text-align: left;
+    word-wrap: break-word;
+  }
+
+  a{ word-break: break-word; }
+
+  .volver{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+
+  /* Footer apilado en una columna */
+  .footer-content{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center;
+  }
+  .footer-logo{
+    width: 84px;
+    height: auto;
+    margin: 0 auto 10px;
+  }
+  .social-icons{
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  /* Imágenes decorativas (si las usas) no invadan el contenido */
+  .decor-img{
+    position: static;
+    transform: none;
+    opacity: .18;
+    display: block;
+    margin: 8px auto;
+    max-width: 180px;
+  }
+}
+
+/* Teléfonos muy pequeños */
+@media (max-width: 400px){
+  .menu{ gap: 8px; }
+  .menu a, .btn-contacto{ font-size: .9rem; padding: 7px 10px; }
+  .container{ padding: 16px 12px; }
+}
+
+
+
+
+
